@@ -1,119 +1,85 @@
 # Parking Management System - Admin Panel
 
-![Parking Admin Dashboard](https://via.placeholder.com/800x200.png?text=Parking+Admin+Dashboard)
-
-A full-featured **Admin Panel** for managing parking zones, employees, categories, subscriptions, rush hours, and vacations with **real-time updates**. Built with **React**, **TypeScript**, **Tailwind CSS**, **React Query**, **Axios**, and **WebSockets**.
-
----
-
-## 🛠️ Features
-
-### 🔑 Authentication
-- Admin login with JWT token stored in localStorage.
-- Logout with confirmation and toast notifications.
-
-### 🏢 Employees Management
-- Add, edit, delete employees.
-- Assign roles: Admin or Employee.
-- Real-time updates using React Query cache.
-
-### 🅿️ Zones Management
-- View all parking zones with details: total slots, occupied, free, reserved.
-- Toggle zones open/close in real-time.
-
-### 💳 Subscriptions Management
-- List all subscriptions.
-- Show active/inactive status per user.
-- Real-time updates when subscription status changes.
-
-### 🏷️ Categories Management
-- Update normal and special rates for parking categories.
-- Live update using React Query.
-
-### ⏱️ Rush Hours Management
-- Add rush hours for each day of the week.
-- Display all configured rush hours.
-
-### 🌴 Vacations Management
-- Add and view vacations.
-- Display active vacations.
-
-### 📊 Overview Dashboard
-- Summary of employees, open/closed zones, active/inactive subscriptions.
-
-### ⚡ Real-Time Audit Log
-- WebSocket integration to show admin actions live.
+A full-featured admin dashboard for managing parking zones, employees, categories, subscriptions, rush hours, and vacations with real-time updates.  
+Built with **React**, **TypeScript**, and **Vite**.
 
 ---
 
-## 💻 Technologies Used
+## 📦 Requirements
 
-- **Frontend:** React, TypeScript, Tailwind CSS, Framer Motion  
-- **State Management & Data Fetching:** React Query, Axios  
-- **Notifications:** react-toastify  
-- **WebSocket:** For real-time audit log  
-- **Other:** LocalStorage for token persistence
+- **Node.js** (v16 or higher)  
+- **npm** or **yarn**  
+- A code editor like **VS Code**
 
 ---
 
-## 🏗️ Project Structure
+## ⚙️ Setup & Run Instructions
 
-src/
-├─ Components/ # Reusable UI components (Loading, Modals, etc.)
-├─ Interfaces/ # TypeScript interfaces for Employees, Zones, etc.
-├─ Pages/ # AdminDashboard and all tabs (Employees, Zones, etc.)
-├─ App.tsx # Main app component
-└─ main.tsx # Entry point
-
-
-
-## 🚀 Setup / Run Instructions
-
-1. **Clone the repository**
+1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/your-username/parking-admin-panel.git
-cd parking-admin-panel
-Install dependencies
+git clone https://github.com/Mostafa2132/task.git
+cd task
+Install dependencies:
+
+Using npm:
 
 bash
 Copy code
 npm install
-Set up environment variables
+Or using yarn:
 
-Create a .env file in the root directory:
-
-env
+bash
 Copy code
-VITE_API_URL=http://localhost:3000/api/v1
-Start the development server
+yarn install
+Environment setup:
+
+Copy the example environment file and update as needed:
+
+bash
+Copy code
+cp .env.example .env
+Run the project:
+
+Using npm:
 
 bash
 Copy code
 npm run dev
-Open the app in your browser
+Or using yarn:
 
-Visit: http://localhost:5173
+bash
+Copy code
+yarn dev
+The project should now open in your browser at: http://localhost:3000
 
-Backend
+🛠️ Project Structure
+pgsql
+Copy code
+task/
+├── Data/
+├── parking-reservations-system-task/
+├── public/
+├── src/
+├── .env
+├── .gitignore
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vercel.json
+└── vite.config.ts
+📄 Key Files
+index.html — Main HTML file for the app
 
-Make sure your backend server is running at http://localhost:3000/api/v1 with endpoints for:
+package.json — Project info and dependencies
 
-/auth/login
+vite.config.ts — Vite configuration
 
-/admin/users
+tsconfig.json — TypeScript configuration
 
-/admin/zones
-
-/admin/subscriptions
-
-/admin/rush-hours
-
-/admin/vacations
-
-/master/categories
-
-WebSocket (Optional for real-time updates)
-
-Backend WebSocket server should be available at:
-ws://localhost:3000/api/v1/ws/admin
+README.md — Project documentation
